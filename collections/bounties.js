@@ -14,6 +14,10 @@ Bounties = Collections.create("bounties", {
       }
     }
   },
+  visible: {
+      type: Boolean,
+      defaultValue: false
+  },
   score: {
     type: Number,
     defaultValue: 0

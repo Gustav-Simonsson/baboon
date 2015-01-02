@@ -2,8 +2,13 @@
   <section id="bounties" class="row">
     <h1>Found bounties</h1>
     {{#each bounties }}
-      <h2>{{title}}</h2>
-      <h3>{{ethId}}</h3>
+    {{#if visible}}
+      <h2>{{ethId}}  {{title}}</h2>
+      <div class="panel">
+        {{#each badges }}
+          {{> badgeImage badge }}
+        {{/each}}
+      </div>
       <div class="bounty-description">
         {{description}}
       </div>
@@ -19,11 +24,7 @@
         </label>
         <span>${{valueUsd}}</span>
       </div>
-      <div class="panel">
-        {{#each badges }}
-          {{> badgeImage badge }}
-        {{/each}}
-      </div>
+    {{/if}}
     {{/each}}
   </section>
 </template>
